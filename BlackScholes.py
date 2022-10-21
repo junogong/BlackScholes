@@ -26,8 +26,6 @@ def blackScholes(r, S, K, T, sigma, type = option):
     except:
         print("Please confirm the input parameters!")
 
-print("Option Price: ", blackScholes(r, S, K, T, sigma, option))
-
 #Calculate Delta
 def delter(r, S, K, T, sigma, type = option):
     d1 = (np.log(S/K) + (r + sigma**2/2)*T)/(sigma*np.sqrt(T))
@@ -40,11 +38,8 @@ def delter(r, S, K, T, sigma, type = option):
     except:
         print("Please confirm the input parameters!")
 
-print("Options Delta: ", delter(r, S, K, T, sigma, option))
-
 #Calculate Gamma
 def gammer(r, S, K, T, sigma, type = option):
-    "Calculate BS price of call/put"
     d1 = (np.log(S/K) + (r + sigma**2/2)*T)/(sigma*np.sqrt(T))
     d2 = d1 - sigma*np.sqrt(T)
     try:
@@ -53,11 +48,8 @@ def gammer(r, S, K, T, sigma, type = option):
     except:
         print("Please confirm the input parameters!")
 
-print("Option Gamma: ", gammer(r, S, K, T, sigma, option))
-
 #Calculate Vega
 def vegar(r, S, K, T, sigma, type = option):
-    "Calculate BS price of call/put"
     d1 = (np.log(S/K) + (r + sigma**2/2)*T)/(sigma*np.sqrt(T))
     d2 = d1 - sigma*np.sqrt(T)
     try:
@@ -66,11 +58,8 @@ def vegar(r, S, K, T, sigma, type = option):
     except:
         print("Please confirm the input parameters!")
 
-print("Option Vega: ", vegar(r, S, K, T, sigma, option))
-
 #Calculate Theta
 def theter(r, S, K, T, sigma, type = option):
-    "Calculate BS price of call/put"
     d1 = (np.log(S/K) + (r + sigma**2/2)*T)/(sigma*np.sqrt(T))
     d2 = d1 - sigma*np.sqrt(T)
     try:
@@ -82,11 +71,8 @@ def theter(r, S, K, T, sigma, type = option):
     except:
         print("Please confirm the input parameters!")
 
-print("Option Theta: ", theter(r, S, K, T, sigma, option))
-
 #Calculate Rho
 def rhor(r, S, K, T, sigma, type = option):
-    "Calculate BS price of call/put"
     d1 = (np.log(S/K) + (r + sigma**2/2)*T)/(sigma*np.sqrt(T))
     d2 = d1 - sigma*np.sqrt(T)
     try:
@@ -98,4 +84,9 @@ def rhor(r, S, K, T, sigma, type = option):
     except:
         print("Please confirm the input parameters!")
 
+print("Option Price: ", blackScholes(r, S, K, T, sigma, option))
+print("Options Delta: ", delter(r, S, K, T, sigma, option))
+print("Option Gamma: ", gammer(r, S, K, T, sigma, option))
+print("Option Vega: ", vegar(r, S, K, T, sigma, option))
+print("Option Theta: ", theter(r, S, K, T, sigma, option))
 print("Option Rho: ", rhor(r, S, K, T, sigma, option))
